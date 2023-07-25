@@ -1,0 +1,22 @@
+
+int findSecondLargest(int n, vector<int> &arr)
+{
+    int max = INT_MIN;
+    int secondMax = INT_MIN;
+    for(int i =0; i < arr.size(); i++){
+        if(arr[i] > max){
+            max = arr[i];
+        }
+    }
+    for (int j = 0; j < arr.size(); j++)
+    {
+        if(arr[j] > secondMax && arr[j] < max){
+            secondMax = arr[j];
+        }
+    }
+    if(secondMax == INT_MIN){
+        return -1;
+    }
+    return secondMax;
+    // Write your code here.
+}
